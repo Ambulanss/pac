@@ -127,6 +127,11 @@ case "$1" in
 		shift
 		CMD_ARGS="-R $@"
 		;;
+		
+	'autoremove')
+		shift
+		CMD_ARGS="-Rcs $(pacman -Qdtq)"
+		;;	
 	*)
 		log_error "Unknown command: $1"
 		exit 1

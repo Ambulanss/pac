@@ -42,6 +42,7 @@ Usage: pac [options] <command> <args>...
   pac remove <package>
   pac update [args]...
   pac upgrade [args]...
+  pac autoremove
 
 Options:
   -h | --help		Show this screen.
@@ -63,3 +64,5 @@ Pac will automatically use `yaourt` if it is installed, and will automatically u
 `pac upgrade {ARGS}` == `pacman -Syu {ARGS}`
 
 `pac remove {ARGS}`  == `pacman -R {ARGS}`
+
+`pac autoremove` == `pacman -Rcs $(pacman -Qdtq)`
